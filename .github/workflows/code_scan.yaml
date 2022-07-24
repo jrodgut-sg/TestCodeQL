@@ -31,12 +31,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-      working-directory: a_demo_actions
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
         languages: javascript
-        config-file: ./.github/codeql/a_demo_actions-config.yml
     # Autobuild attempts to build any compiled languages (C/C++, C#, or Java).
     # If this step fails, then you should remove it and run the build manually (see below).
     - name: Autobuild
